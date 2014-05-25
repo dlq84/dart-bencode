@@ -4,3 +4,5 @@ author: Daniel Lundqvist
 description: A Bencode decoder and encoder library ported to dart with node-bencode as inspiration.
 homepage: https://github.com/dlq84/dart-bencode
 documentation: https://github.com/dlq84/dart-bencode/blob/master/README.md
+dependencies:
+  unittest: any
