@@ -9,7 +9,7 @@ const B_INT = 0x69;
 const B_DELIM = 0x3A;
 
 class Decoder {
-  num pos = 0;
+  int pos = 0;
   List<int> input;
   
   Decoder(this.input);
@@ -53,7 +53,7 @@ class Decoder {
   
   _list() {
     this.pos++;
-    List<Object> lst = new List();
+    var lst = new List();
     while(this.input[this.pos] != B_END) {
       lst.add(this._next());
     }
@@ -66,15 +66,15 @@ class Decoder {
     var l = new List();
     l.addAll(this.input.getRange(this.pos + 1, end));
     var number = ASCII.decode(l);
-    this.pos += end +1 - this.pos;
-    return num.parse(number);
+    this.pos += end + 1 - this.pos;
+    return int.parse(number);
   }
   
   _bytes() {
     var sep = this._find(B_DELIM);
     var l = new List();
     l.addAll(this.input.getRange(this.pos, sep));
-    var length = num.parse(ASCII.decode(l));
+    var length = int.parse(ASCII.decode(l));
     var end = ++sep + length;
 
     this.pos = end;
@@ -92,11 +92,11 @@ class Decoder {
 }
 
 class Encoder {
-  List<int> output = new List<int>();
+  var output = new List<int>();
   var _input;
   Encoder(this._input);
   
-  encode() {
+  List<int> encode() {
     _encode(this._input);
     return output;
   }
@@ -138,7 +138,7 @@ class Encoder {
   
   _dict(input) {
     output.add(B_DICT);
-    List sortedKeys = input.keys.toList();
+    var sortedKeys = input.keys.toList();
     sortedKeys.sort();
     sortedKeys.forEach((key) {
       _bytes(key);

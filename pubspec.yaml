@@ -1,5 +1,5 @@
 name: bencode
-version: 0.0.1
+version: 0.0.2
 author: Daniel Lundqvist
 description: A Bencode decoder and encoder library ported to dart with node-bencode as inspiration.
 homepage: https://github.com/dlq84/dart-bencode
