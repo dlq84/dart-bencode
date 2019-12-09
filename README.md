@@ -22,7 +22,6 @@ Example code is found in [example/main.dart](example/main.dart). It is a simple 
 
 ## Authors
 Daniel Lundqvist <[daniel.lundqvist84@gmail.com](mailto:daniel.lundqvist84@gmail.com)>
-See also the list of contributors who participated in this project.
 
 ## License
 Please read [LICENSE](LICENSE) for details on our code of conduct, and the process for submitting pull requests to us.
